@@ -1,4 +1,4 @@
-import Dom from './dom'
+import Dom from './../dom'
 import Types from './../utils/types'
 
 class Query {

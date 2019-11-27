@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/view/*.html src/view/*/*.html --no-cache",
     "build": "npm run clean && parcel build src/view/*.html src/view/*/*.html   --public-url ./  --no-cache --detailed-report ",
-    "umd": "parcel build src/trouble/index.js --global Trouble --out-file  libs/trouble.js"
+    "export": "npm run clean &&  parcel build src/trouble/export.js --global Trouble --out-file  libs/trouble.js"
   },
   "author": "",
   "license": "ISC",

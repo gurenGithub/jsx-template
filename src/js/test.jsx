@@ -8,6 +8,7 @@ let app = document.getElementById('app');
 let App = () => {
   let list = [1, 2, 3, 4];
 
+
   let test = 'test123';
   return (
     <div ref="test">
@@ -20,6 +21,7 @@ let App = () => {
     </div>
   );
 };
+
 
 let result = App();
 

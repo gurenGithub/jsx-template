@@ -1,4 +1,4 @@
-import { Dom, JSX, Component } from "trouble";
+import {Dom, JSX, Component} from 'trouble';
 class CM extends Component {
   constructor(props) {
     super(props);
@@ -6,24 +6,24 @@ class CM extends Component {
   componentWillMount() {
     //console.log('componentWillMount');
   }
-  
+
   render() {
     // console.log('render');
     return (
-      <div ref="my"
+      <div
+        ref="my"
         onClick={() => {
           alert(this.props.xxx);
         }}
       >
-        <span ref="test">日了狗</span>{this.props.xxx}
+        <span ref="test">日了狗</span>
+        {this.props.xxx}
       </div>
     );
   }
-  mounted(){
-
+  mounted() {
     //this.$refs.my.setAttribute('innerHTML','222');//='222';
   }
 }
-
 
 export default CM;
