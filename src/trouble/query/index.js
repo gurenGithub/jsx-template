@@ -1,22 +1,22 @@
 import Dom from './dom'
-import Types from './../utils/types';
+import Types from './../utils/types'
 
 class Query {
-
 
   constructor(dom) {
     this.dom = dom
   }
+
   setHtml(html) {
-    this.dom.innerHTML = html;
-    return this.slef();
+    this.dom.innerHTML = html
+    return this.slef()
 
   }
+
   getHtml() {
 
-    return this.dom.innerHTML;
+    return this.dom.innerHTML
   }
-
 
   slef() {
     return new Query(this.dom)
@@ -27,18 +27,18 @@ class Query {
 
     if (Types.isString(options)) {
 
-      this.setAttribute('class', options);
+      this.setAttribute('class', options)
     } else if (options instanceof Array) {
 
-      let classNames = [];
+      const classNames = []
       options.map(el => {
         if (Types.isString(el)) {
           classNames.push(el)
         } else if (Types.isObject(el)) {
 
-          for (let key in el) {
+          for (const key in el) {
 
-            let value = el[key];
+            const value = el[key]
             if (Types.isString(value)) {
               classNames.push(value)
             } else if (Types.isBoolean(value)) {
@@ -63,66 +63,67 @@ class Query {
 
   addClass(name) {
 
-    let className = this.getClass();
-    className = className.replace(new RegExp(name, 'gi'), '');
-    className += ` ${name}`;
-    this.setClass(className);
+    let className = this.getClass()
+    className = className.replace(new RegExp(name, 'gi'), '')
+    className += ` ${name}`
+    this.setClass(className)
 
   }
+
   getClass() {
 
     return this.getAttribute('class')
   }
+
   hide() {
 
-
-    this.dom.style.display = "none";
-    return this.slef();
+    this.dom.style.display = 'none'
+    return this.slef()
   }
 
   setAttribute(name, value) {
 
-    this.dom.setAttribute(name, value);
+    this.dom.setAttribute(name, value)
 
-    return this.slef();
+    return this.slef()
   }
 
   getAttribute(name) {
 
-    this.dom.getAttribute(name);
-    return this.slef();
+    this.dom.getAttribute(name)
+    return this.slef()
   }
 
   getDom() {
 
-    return this.dom;
+    return this.dom
   }
+
   show() {
 
-    this.dom.style.display = "block";
+    this.dom.style.display = 'block'
 
-    return this.slef();
+    return this.slef()
   }
+
   append(vNode) {
 
     if (vNode.isComponent) {
 
       Dom.render(vNode, this.dom)
     } else {
-      this.dom.appendChilid(vNode);
+      this.dom.appendChilid(vNode)
     }
 
-    return this.slef();
-    //this.dom.appendChilid(children);
-  }
+    return this.slef()
 
+    // this.dom.appendChilid(children);
+  }
 
   static create(dom) {
 
-    return new Query(dom);
+    return new Query(dom)
   }
 }
 
-
-
-export default Query;
+export default Query

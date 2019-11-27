@@ -6,6 +6,7 @@ class CM extends Component {
   componentWillMount() {
     //console.log('componentWillMount');
   }
+  
   render() {
     // console.log('render');
     return (

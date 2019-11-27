@@ -1,22 +1,21 @@
-import Types from './../utils/types';
+import Types from './../utils/types'
 const members = {
-
   setClass(options) {
 
     if (Types.isString(options)) {
 
-      this.setAttribute('class', options);
+      this.setAttribute('class', options)
     } else if (options instanceof Array) {
 
-      let classNames = [];
+      const classNames = []
       options.map(el => {
         if (Types.isString(el)) {
           classNames.push(el)
         } else if (Types.isObject(el)) {
 
-          for (let key in el) {
+          for (const key in el) {
 
-            let value = el[key];
+            const value = el[key]
             if (Types.isString(value)) {
               classNames.push(value)
             } else if (Types.isBoolean(value)) {
@@ -38,12 +37,13 @@ const members = {
     }
 
   },
+
   addClass(name) {
 
-    let className = this.getClass();
-    className = className.replace(new RegExp(name, 'gi'), '');
-    className += ` ${name}`;
-    this.setClass(className);
+    let className = this.getClass()
+    className = className.replace(new RegExp(name, 'gi'), '')
+    className += ` ${name}`
+    this.setClass(className)
 
   },
   getClass() {
@@ -52,4 +52,4 @@ const members = {
   }
 }
 
-export default members;
+export default members

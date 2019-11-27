@@ -1,42 +1,42 @@
 import {
   Dom
 } from './index'
-import setRefs from './refs';
+import setRefs from './refs'
 
 class Component {
   constructor(props = {}) {
-    this.isComponent = true;
-    this.state = {};
+    this.isComponent = true
+    this.state = {}
     this.$refs = {}
-    this.props = props;
+    this.props = props
+  }
+
+  getState() {
+
+    // let me=this;
   }
 
   setState(stateChange) {
+
     // 将修改合并到state
-    Object.assign(this.state, stateChange);
+    Object.assign(this.state, stateChange)
     if (this._container) {
-      Dom.render(this, this._container);
+      Dom.render(this, this._container)
     }
   }
 
-  renderCompleted(vnode,dom) {
-
-    setRefs(dom, this);
-
+  renderCompleted(vnode, dom) {
+    setRefs(dom, this)
   }
 
-  mounted(){
-    
-    //console.log('mounted')
+  mounted() {
+
+    // console.log('mounted')
   }
 
-  
-  intrinsic(vnode,dom){
-    setRefs(dom, this);
-
+  intrinsic(vnode, dom) {
+    setRefs(dom, this)
   }
-
-
 }
 
-export default Component;
+export default Component

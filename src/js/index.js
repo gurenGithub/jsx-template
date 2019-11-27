@@ -1,2 +1,2 @@
 import './test.jsx'
-import './../styles/index.scss';
+import './../styles/index.scss'
