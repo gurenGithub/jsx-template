@@ -1,5 +1,4 @@
 const setAttribute = (dom, name, value) => {
-
   // 如果属性名是class，则改回className
   if (name === 'className') name = 'class'
 
@@ -14,10 +13,9 @@ const setAttribute = (dom, name, value) => {
       dom.style.cssText = value || ''
     } else if (value && typeof value === 'object') {
       for (const name in value) {
-
         // 可以通过style={ width: 20 }这种形式来设置样式，可以省略掉单位px
         dom.style[name] = typeof value[name] === 'number' ? `${value[name]
-                }px` : value[name]
+        }px` : value[name]
       }
     }
 

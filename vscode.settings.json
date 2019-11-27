@@ -1,0 +1,31 @@
+{
+  "explorer.confirmDelete": false,
+
+  "vetur.format.defaultFormatter.html": "prettier",
+  "window.zoomLevel": 0,
+
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".vue"
+
+    ]
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    }, "html",
+    "vue",
+    "jsx"
+  ],
+  "javascript.format.enable": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2
+}

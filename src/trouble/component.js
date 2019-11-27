@@ -17,7 +17,6 @@ class Component {
   }
 
   setState(stateChange) {
-
     // 将修改合并到state
     Object.assign(this.state, stateChange)
     if (this._container) {

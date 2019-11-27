@@ -21,7 +21,6 @@ let App = () => {
   );
 };
 
-
 let result = App();
 
 console.log(result);

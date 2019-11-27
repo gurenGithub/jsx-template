@@ -1,20 +1,16 @@
 import Types from './../utils/types'
+
 const members = {
   setClass(options) {
-
     if (Types.isString(options)) {
-
       this.setAttribute('class', options)
     } else if (options instanceof Array) {
-
       const classNames = []
       options.map(el => {
         if (Types.isString(el)) {
           classNames.push(el)
         } else if (Types.isObject(el)) {
-
           for (const key in el) {
-
             const value = el[key]
             if (Types.isString(value)) {
               classNames.push(value)
@@ -25,29 +21,23 @@ const members = {
             } else {
               if (value) {
                 classNames.push(key)
-
               }
             }
           }
         }
-
       })
 
       this.setAttribute('class', classNames)
     }
-
   },
 
   addClass(name) {
-
     let className = this.getClass()
     className = className.replace(new RegExp(name, 'gi'), '')
     className += ` ${name}`
     this.setClass(className)
-
   },
   getClass() {
-
     return this.getAttribute('class')
   }
 }
